@@ -1,3 +1,19 @@
+## Whatsapp clone
+- Using green-api.com for backend API
+
+# Installation:
+1. Download the repository on your local machine.
+2. Install dependancies `yarn install`
+3. Build the application `yarn run build`
+4. Go to [green-api.com](https://green-api.com) and create an account.
+5. Go to [console.green-api.com](https://console.green-api.com) and create an instance and authorize it
+6. Copy (`ApiTokenInstance` and `IdInstance`) and enter them in the inputs to log in. 
+  - You can save them by clicking on `save credentials` so that you don't have to enter them everytime (it saves them locally) 
+8. After you logged in, then you need to enter the phone number that you whant to chat with him. 
+ - Keep in mind that you need to enter the `phone number` with  `country code` e.g. Russian number will look like this: 79009123456
+9. Done. Enjoy it 😌
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
