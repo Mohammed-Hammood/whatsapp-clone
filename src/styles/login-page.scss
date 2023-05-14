@@ -1,0 +1,87 @@
+@import "mixins.scss";
+
+.loginPage {
+    width: 100%;
+    height: 100vmin;
+    @include CENTER_H;
+    background-color: #EFF1F4;
+    z-index: 1;
+    .landing-header {
+        background-color: #00a884;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 222px;
+        z-index: -1;
+        @include CENTER_HV;
+        &__icon {
+            color:white;
+            width:100%;
+            gap:10px;
+            max-width: 600px;
+            @include CENTER_V;
+            justify-content: flex-start;
+        }
+    }
+
+    form {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        max-width: 600px;
+        border: 1px solid var(--borderColor);
+        justify-content: stretch;
+        flex-direction: column;
+        background: white;
+        max-height: 280px;
+        margin-top: 180px;
+        display: grid;
+        align-items: stretch;
+        padding-top:20px;
+        .section {
+            display: flex;
+            gap:5px;
+            align-items: center;
+            button[class=saveCredentialsButton] {
+                padding: 0;
+                width:  20px;
+                height: 20px;
+                border:1px solid black;
+                border-radius: 50%;
+                background-color: white;
+                @include CENTER_HV;
+                cursor: pointer;
+                &:active {
+                    transform: scale(1.1);
+                }
+            }
+            
+        }
+        .buttons {
+            width: 100%;
+            @include CENTER_HV;
+            gap: 10px;
+
+            button {
+                border: none;
+                min-height: 40px;
+                cursor: pointer;
+                padding: 5px;
+                @include CENTER_HV;
+                width: 100%;
+                &:disabled {
+                    cursor: default;
+                }
+                &:active {
+                    transform: scale(1.1);
+                }
+
+                &.primary {
+                    background-color: var(--mainColor);
+                    color: white;
+                }
+            }
+        }
+    }
+
+}

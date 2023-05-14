@@ -1,0 +1,302 @@
+@import "mixins";
+
+.homePage {
+    height: 100vmin;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
+
+    button {
+        display: flex;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        border-radius: 50%;
+
+        &:hover {
+            background-color: #d0d0d0;
+        }
+    }
+
+    &::before {
+        content: "";
+        width: 100%;
+        position: absolute;
+        background: #00a884;
+        height: 127px;
+        top: 0;
+        left: 0;
+    }
+
+    .content-center {
+        width: 100%;
+        max-width: 1600px;
+        margin-top: 10px;
+        display: flex;
+        height: calc(100% - 20px);
+        box-shadow: 0 6px 18px rgba(var(--shadow-rgb), .05);
+        background-color: var(--conversation-panel-background);
+
+        .chat {
+            background: inherit;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            height: calc(100%);
+            flex: 1 1 70%;
+            z-index: 2;
+            overflow: hidden;
+
+            &__header {
+                background-color: var(--panel-header-background);
+                display: flex;
+                z-index: 2;
+                justify-content: flex-start;
+                gap: 5px;
+                color: black;
+                display: flex;
+                padding: 10px;
+                justify-content: space-between;
+
+                &__leftGroup,
+                &__rightGroup {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 5px;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+
+                    &__receiverInfo {
+                        display: flex;
+                        flex-direction: column;
+
+                        &__receiverStatus {
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+
+            .bodyWrapper {
+                height: calc(100% - 121px);
+                overflow-y: auto;
+                z-index: 1;
+
+                .bgImage {
+                    display: flex;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: -1;
+
+                    &__bg {
+                        max-height: calc(100% - 50px);
+                        max-width: 1600px;
+                        background-repeat: repeat;
+                        background-image: url("http://localhost:3000/images/chat-bg-image.png");
+                        background-color: var(--conversation-panel-background);
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        ;
+                        z-index: -1;
+                        overflow: hidden;
+                        opacity: 0.4;
+
+                    }
+                }
+
+                .body {
+                    width: 100%;
+                    margin-top: 1px;
+                    padding: 5px;
+                    background: inherit;
+                    gap: 10px;
+                    display: flex;
+                    min-height: 100%;
+                    flex-direction: column;
+                    justify-content: flex-end;
+
+                    .encryptionMessage {
+                        padding: 0 15px;
+                        margin-bottom: 10px;
+
+                        div {
+                            width: 100%;
+                            background: #ffeecd;
+                            padding: 10px;
+                            color: #54656f;
+                            gap: 5px;
+                            display: flex;
+                            margin: 10px auto;
+                            width: fit-content;
+                            padding: 5px 12px 6px;
+                            text-align: center;
+                            border-radius: 7.5px;
+                            font-size: 13px;
+                            box-shadow: 0 1px .5px rgba(11, 20, 26, .13);
+                        }
+                    }
+
+                    .message_sender,
+                    .message_receiver {
+                        display: flex;
+                        width: 100%;
+                        justify-content: flex-end;
+                        padding: 0 43px;
+
+                        .message {
+                            justify-content: flex-start;
+                            background: #d9fdd3;
+                            width: fit-content;
+                            border-radius: 5px;
+                            min-height: 35px;
+                            padding: 5px;
+                            display: flex;
+                            gap: 2px;
+                            margin: 0 20px;
+                            color: #111b21;
+                            flex-direction: column;
+
+                            &__image,
+                            &__video {
+                                width: 100%;
+                                display: flex;
+                                gap: 5px;
+                                overflow: hidden;
+                                justify-content: center;
+                                flex-direction: column;
+
+                                &__caption {
+                                    display: flex;
+                                    justify-content: flex-start;
+                                }
+
+                                video {
+                                    width: 100%;
+                                    max-width: 330px;
+                                }
+
+                                img {
+                                    max-width: 330px;
+                                    object-fit: contain;
+                                }
+                            }
+
+                            &__info {
+                                display: flex;
+                                gap: 5px;
+                                justify-content: flex-end;
+
+                                &__timestamp,
+                                &__icon {
+                                    font-size: var(--fontSize13);
+
+                                    svg {
+                                        height: 11px;
+                                        width: 11px;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+
+                    .message_receiver {
+                        justify-content: flex-start;
+
+                        .message {
+                            background: #fff;
+                        }
+                    }
+                }
+            }
+
+            &__footer {
+                display: flex;
+                position: relative;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                z-index: 2;
+                padding: 10px;
+                background-color: rgb(233, 233, 237);
+                gap: 5px;
+                @include CENTER_V;
+
+                input:focus,
+                input {
+                    outline: none;
+                }
+
+                button {
+                    border-radius: 50%;
+                    border: none;
+                    padding: 10px;
+                    cursor: pointer;
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+
+                        path {
+                            fill: #54656f;
+                        }
+                    }
+
+                    &:active {
+                        transform: scale(1.06);
+                    }
+                }
+
+                &__buttons {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    flex-wrap: nowrap;
+                    padding: 15px 0 0 0;
+                    gap: 5px;
+
+                }
+
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:1600px) {
+    .homePage {
+        padding: 0;
+
+        .content-center {
+            max-width: 100%;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            margin-top: 0;
+
+            .chat .bodyWrapper {
+                height: 100%;
+            }
+        }
+    }
+}
