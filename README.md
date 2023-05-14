@@ -9,7 +9,7 @@
 5. Go to [console.green-api.com](https://console.green-api.com) and create an instance and authorize it
 6. Copy (`ApiTokenInstance` and `IdInstance`) and enter them in the inputs to log in. 
   - You can save them by clicking on `save credentials` so that you don't have to enter them everytime (it saves them locally) 
-8. After you logged in, then you need to enter the phone number that you whant to chat with him. 
+8. After you logged in, then you need to enter the phone number that you want to chat with him. 
  - Keep in mind that you need to enter the `phone number` with  `country code` e.g. Russian number will look like this: 79009123456
 9. Done. Enjoy it 😌
 
