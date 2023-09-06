@@ -6,7 +6,6 @@ import LoginPage from './login';
 import { useSelector } from 'react-redux';
 import { selectAuthentication } from 'store/selectors';
 
-
 export default function Pages() {
     const { isAuthenticated } = useSelector(selectAuthentication);
     const navigate = useNavigate();
